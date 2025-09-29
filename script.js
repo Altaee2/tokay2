@@ -86,17 +86,17 @@ function formatTelegramMessage(data) {
         dateStyle: 'short',
     });
 
-    return `
+   return `
 💰 *عملية مبيعات جديدة!* 💰
 ---------------------------------
 
- * ✨النوع:*  #${data.category}
+* ✨النوع: \#${data.category}
 
- * 💸 المبلغ:* ${data.price_iqd.toLocaleString('ar-IQ')} دينار عراقي
+* 💸 المبلغ: ${data.price_iqd.toLocaleString('ar-IQ')} دينار عراقي
 
- *⏰ التاريخ:* ${date}
+* ⏰ التاريخ: ${date}
 
- *📄 الملاحظات:* ${data.notes}
+* 📄 الملاحظات: ${data.notes}
 
 ---------------------------------
 `;
@@ -193,3 +193,4 @@ function downloadData() {
     alert("تم تحميل ملف info.json بنجاح!");
 
 }
+
