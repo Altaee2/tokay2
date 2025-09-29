@@ -90,7 +90,7 @@ function formatTelegramMessage(data) {
 💰 *عملية مبيعات جديدة!* 💰
 ---------------------------------
 
- * ✨النوع:* ${data.category}
+ * ✨النوع:*  #${data.category}
 
  * 💸 المبلغ:* ${data.price_iqd.toLocaleString('ar-IQ')} دينار عراقي
 
@@ -191,4 +191,5 @@ function downloadData() {
     URL.revokeObjectURL(url);
 
     alert("تم تحميل ملف info.json بنجاح!");
+
 }
