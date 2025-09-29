@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة نشر المبيعات</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container" id="login-form">
+        <h2>تسجيل دخول المدير 🔑</h2>
+        <form onsubmit="handleLogin(event)">
+            <input type="text" id="username" placeholder="اسم المستخدم (manager)" required>
+            <input type="password" id="password" placeholder="كلمة السر (secret)" required>
+            <button type="submit" class="submit-btn">دخول</button>
+            <p id="login-message" class="error-msg"></p>
+        </form>
+    </div>
+
+    <div class="container hidden" id="sales-form">
+        <h2 id="welcome-message">نشر عملية مبيعات 📊</h2>
+        <form onsubmit="handleSubmit(event)">
+
+            <label for="category">نوع الصنف:</label>
+            <select id="category" required>
+                <option value="" disabled selected>اختر نوع المبيعات...</option>
+                <option value="صور">صور</option>
+                <option value="قرطاسية">قرطاسية</option>
+                <option value="استنساخ">استنساخ</option>
+                <option value="تقديم">تقديم خدمات</option>
+            </select>
+
+            <label for="price">السعر (دينار عراقي):</label>
+            <input type="number" id="price" min="1" placeholder="أدخل السعر بالعراقي" required>
+
+            <label for="notes">ملاحظات (اختياري):</label>
+            <textarea id="notes" rows="3" placeholder="أضف أية ملاحظات إضافية..."></textarea>
+
+            <button type="submit" class="submit-btn"> نشر </button>
+            <button type="button" class="logout-btn" onclick="logout()">خروج</button>
+            <p id="status-message" class="success-msg"></p>
+        </form>
+
+        <div id="history" style="margin-top: 25px; border-top: 1px solid #eee; padding-top: 15px;">
+            <h3>سجل العمليات المحلية </h3>
+            <ul id="sales-list" style="list-style: none; padding: 0;"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
